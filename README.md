@@ -2,7 +2,9 @@
 
 * Company: **Intuit**
 * Location: **Bangalore**
+* Dates: **Jan 30th - Feb 2nd**
 
+## For People who love Coding 
 
 ## ToDo
 
