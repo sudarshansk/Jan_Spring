@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="doorBean1" class="com.intuit.Door">
+		<property name="anotherAlarm" ref="visualAlarmBean"></property>
+		<property name="alarm" ref="soundAlarmBean"></property>
+	</bean>
+	<bean id="doorBean2" class="com.intuit.Door">
+		<property name="alarm" ref="visualAlarmBean"></property>
+	</bean>
+	
+	<bean id="soundAlarmBean" class="com.intuit.SoundAlarm"></bean>
+	<bean id="visualAlarmBean" class="com.intuit.VisualAlarm"></bean>
+	
+</beans>
