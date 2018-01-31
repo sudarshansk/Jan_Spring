@@ -8,7 +8,14 @@ public class User {
 		ApplicationContext context = 
 				new FileSystemXmlApplicationContext("classpath:beans.xml");
 		Employee employee = context.getBean("employee",Employee.class);
+	
+//		System.out.println(employee.getClass().getName());
+//		System.out.println(employee.getClass().getSuperclass().getName());
+		
 		employee.setName("Sam");
 		employee.work();
+		employee.browse("TOI");
+		employee.browse("cricinfo");
+		
 	}
 }
