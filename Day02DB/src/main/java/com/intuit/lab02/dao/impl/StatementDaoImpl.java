@@ -9,7 +9,7 @@ public class StatementDaoImpl extends BaseDaoSupport implements StatementDao
 {
 	public void addStatement(int accountNumber,String type,int amount)
 	{
-		String sql = "inser into statements(account_number,type,amount) values(?,?,?)";
+		String sql = "insert into statements(account_number,type,amount) values(?,?,?)";
 		jdbcTemplate.update(sql,accountNumber,type,amount);
 	}
 }
