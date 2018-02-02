@@ -1,0 +1,24 @@
+Monolithic(Getting started, deployment, cost)
+	Layered architecture
+	Microkernel
+	Pipeline
+	
+Distributed(Scalability, Agility, Performance, Multiple Technology)
+	SOA
+	Event-Driven
+	Microservices
+		No specific pattern of communication
+			 Can have a mediator
+			 Can directly access another service
+			 
+		Communication options
+			RESTful (Sync)
+			Messaging (Async)
+
+		Challenges
+			Availability
+			Security
+			Deployment
+			Versioning	
+			SLOW
+		

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<util:properties id="bookProps" location="classpath:book.properties"></util:properties>
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:intuit.properties</value>
+				<value>classpath:training.properties</value>
+			</list>
+		</property>
+		<!-- <property name="location" value="classpath:intuit.properties"></property> -->
+	</bean>
+	
+	<bean id="toyBean" class="com.intuit.Toy">
+		<constructor-arg value="Barbie"></constructor-arg>
+	</bean>
+	
+	<bean id="book1" class="com.intuit.Book">
+		<property name="interestedPublishers" ref="bookProps"></property>
+		<property name="name" value="Hacker"></property>
+		<property name="author" value="Sam"></property>
+		<property name="publishers">
+			<list>
+				<value>${pub1}</value>
+				<value>${pub2}</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="book2" class="com.intuit.Book" parent="book1">
+		<property name="name" value="Security Basics"></property>
+	</bean>
+
+	<bean class="com.intuit.Person">
+		<constructor-arg ref="carBean"></constructor-arg>
+	</bean>
+	<bean class="com.intuit.Person">
+		<constructor-arg ref="carBean"></constructor-arg>
+	</bean>
+	<bean id="carBean" class="com.intuit.Car" lazy-init="true" scope="prototype"/>	
+</beans>
