@@ -1,5 +1,11 @@
 package com.intuit.domain;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope(value="session",proxyMode=ScopedProxyMode.TARGET_CLASS)
 public class Game {
 	private int target;
 	private int attempts;
@@ -8,6 +14,7 @@ public class Game {
 	
 	public Game() {
 		target = (int)(Math.random()*100);
+		System.out.println("Target is " + target);
 	}
 	
 	public void play(int guess) {
